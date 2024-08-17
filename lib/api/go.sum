@@ -1,0 +1,6 @@
+github.com/go-kit/log v0.2.1 h1:MRVx0/zhvdseW+Gza6N9rVzU/IVzaeE1SFI4raAhmBU=
+github.com/go-kit/log v0.2.1/go.mod h1:NwTd00d/i8cPZ3xOwwiv2PO5MOcx78fFErGNcVmBjv0=
+github.com/go-logfmt/logfmt v0.5.1 h1:otpy5pqBCBZ1ng9RQ0dPu4PN7ba75Y/aA+UpowDyNVA=
+github.com/go-logfmt/logfmt v0.5.1/go.mod h1:WYhtIu8zTZfxdn5+rREduYbwxfcBr/Vr6KEVveWlfTs=
+gitlab-server.wlink.com.np/nettv/nettv-auth/lib/types v0.0.0-20230309081051-c3a3f7795740 h1:Tgbu1U22w01VcrgwDMiQB0PhGobdlagk0CLV/nuMX5M=
+gitlab-server.wlink.com.np/nettv/nettv-auth/lib/types v0.0.0-20230309081051-c3a3f7795740/go.mod h1:cA814dP2mnL9RuhWa0hwaeziNCiMqVK3zgGdNBxDMjs=

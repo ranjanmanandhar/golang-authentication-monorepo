@@ -1,0 +1,55 @@
+version: '3'
+
+services:
+
+ nettv-auth-consumer:
+    image: new-nettv-auth-consumer
+    command: /usr/local/bin/nettv-auth-consumer
+      --consulAddress=$CONSUL_ADDRESS
+    networks:
+      - nettv-auth
+
+ passwordless-auth:
+    image: passwordless
+    command: /usr/local/bin/passwordless
+    networks:
+      - nettv-auth
+
+ authenticator:
+    image: authenticator
+    command: /usr/local/bin/authenticator
+    networks:
+      - nettv-auth
+
+ mongo:
+    image: mongo:4.4
+    ports:
+      - "27017:27017"
+    networks:
+      - nettv-auth
+    volumes:
+      - "nettv_data:/data/db"
+
+ cache:
+    image: redis
+    ports:
+      - '6381:6379'
+    networks:
+      - nettv-auth
+    volumes:
+      - "nettv_data:/data"
+
+ consul:
+    image: consul
+    ports:
+      - '8500:8500'
+    networks:
+      - nettv-auth
+
+networks:
+  nettv-auth:
+    external: true
+
+
+volumes:
+  nettv_data:

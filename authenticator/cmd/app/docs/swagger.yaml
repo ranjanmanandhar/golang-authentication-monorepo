@@ -1,0 +1,10 @@
+basePath: /api/v1
+host: localhost:8080
+info:
+  contact:
+    email: prab.magar@gmail.com
+    name: Prabesh Lamichhane Magar
+  title: Service Name API documentation
+  version: 1.0.0
+paths: {}
+swagger: "2.0"

@@ -1,0 +1,39 @@
+version: '3'
+
+services:
+
+ nettv-auth-consumer:
+    image: $IMAGE_NAME
+    command: /usr/local/bin/nettv-auth-consumer
+      --consulAddress=$CONSUL_ADDRESS
+    networks:
+      - nettv-auth
+      
+ mongo:
+    image: mongo:4.4
+    ports:
+      - "27017:27017"
+    networks:
+      - nettv-auth
+    volumes:
+      - "mongo_data:/data/db"
+
+ cache:
+    image: redis
+    ports:
+      - '6381:6379'
+    networks:
+      - nettv-auth
+    volumes:
+      - "cache_data:/data"
+
+networks:
+  nettv-auth:
+    external: true
+
+
+volumes:
+  rabbitmq_data:
+  consul_data:
+  cache_data:
+  mongo_data:
